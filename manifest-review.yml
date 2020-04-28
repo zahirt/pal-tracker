@@ -6,4 +6,4 @@ applications:
   - route: pal-tracker-beta-review.cfapps.io
   buildpack: https://github.com/cloudfoundry/dotnet-core-buildpack/releases/download/v2.3.2/dotnet-core-buildpack-cflinuxfs3-v2.3.2.zip
   env:
-    WELCOME_MESSAGE: Hello from Cloud Foundry
+    WELCOME_MESSAGE: Hello from  the Review Environment
