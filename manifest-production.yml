@@ -2,7 +2,8 @@
 applications:
 - name: pal-tracker
   path: src/PalTracker/bin/Release/netcoreapp2.2/publish/
-  random-route: true
+  routes:
+  - route: pal-tracker-beta-production.cfapps.io
   buildpack: https://github.com/cloudfoundry/dotnet-core-buildpack/releases/download/v2.3.2/dotnet-core-buildpack-cflinuxfs3-v2.3.2.zip
   env:
     WELCOME_MESSAGE: Hello from Cloud Foundry
