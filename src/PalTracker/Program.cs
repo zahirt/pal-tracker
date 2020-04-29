@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Steeltoe.Extensions.Configuration.CloudFoundry;
+using Steeltoe.Extensions.Logging;
+
 
 
 namespace PalTracker
@@ -23,6 +25,12 @@ namespace PalTracker
             WebHost.CreateDefaultBuilder(args)
             .ConfigureAppConfiguration(config => config.AddCloudFoundry())
 
-                .UseStartup<Startup>();
+              //  .UseStartup<Startup>();
+            .UseStartup<Startup>()
+           .ConfigureLogging((builderContext, loggingBuilder) => 
+            {
+                loggingBuilder.AddConfiguration(builderContext.Configuration.GetSection("Logging"));
+                loggingBuilder.AddDynamicConsole();
+            });
     }
 }
